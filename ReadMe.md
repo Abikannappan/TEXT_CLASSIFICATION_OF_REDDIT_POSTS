@@ -18,7 +18,7 @@ Steps:
    ...Following regex is used to extract the words from the raw data
       [A-Za-z]{2,}-[A-Za-z]+ this regex finds the words split by '-'
       [A-Za-z]+ this regex finds the words 
-      [A-Z]{2,} this regex finds the 2 or more capital letterstogether
+      [A-Z]{2,} this regex finds the 2 or more capital letters together
    ...The extracted words are converted into lower case words
    ...Using stopwords some of the words are removed
 * lemmatized the words from Round 1 cleaning
@@ -37,15 +37,15 @@ Steps:
 
 -Modelling:
 MODEL 1 LOGISTICS REGRESSION:
-* started modelling with logistics regression.
+* Started modelling with logistics regression.
 * fit and predict the data for max_features 800, 900 and 1000 under count vectorizer.
 * The accuracy was better for 900 features, so I have used it.
 * This model had a training accuracy of 99.56% but the accuracy and test data is only 90.72%
 * The difference is about 9% and this shows that the model overfits with training data.
 
 
-MODEL 2 Multinomial Neigh Bayes and TFID vectoriser:
-* Used a pipeline and built a model with TFID vectoriser and Multinomial Neigh Bayes.
+MODEL 2 Multinomial Naive Bayes and TFID vectoriser:
+* Used a pipeline and built a model with TFID vectoriser and Multinomial Naive Bayes.
 * fit and predict the data for max_features 800, 900 and 1000 under count vectorizer.
 * The accuracy was better for 900 features also for this model, so I have used it.
 * This model had a training accuracy of 90.34% but the accuracy and test data is only 91.73%
@@ -55,13 +55,13 @@ MODEL 2 Multinomial Neigh Bayes and TFID vectoriser:
 -MODEL EVALUATION:
 * I have used confusion matrix, Accuracy, classification report and AUC curve for model evaluation.
 * Based on AUC curve both the model doesn't show high difference in the performance.
-* But still Multinomial Neigh Bayes with TFID vectoriser did show a slight higher performance.
+* But still Multinomial Naive Bayes with TFID vectoriser did show a slight higher performance.
 
 -CONCLUSION AND RECOMMENDATION:
 
-To classify the posts from japan travel and japan life subreddit, We have used 2 models. One is Logistics regression and the other is Multinomial neigh bayes. Accuracy calculated from test data for both the model are quite similar and it is just more than 90%. But still I choose Multinomial neigh bayes to be the better model as the accuracy on test data is even higher than on the training data. While, the accuracy on test data is 9 percent lower than on the training data. This shows the logistic regression model overfits on the training data.
+To classify the posts from japan travel and japan life subreddit, We have used 2 models. One is Logistics regression and the other is Multinomial naive bayes. Accuracy calculated from test data for both the model are quite similar and it is just more than 90%. But still I choose Multinomial naive bayes to be the better model as the accuracy on test data is even higher than on the training data. While, the accuracy on test data is 9 percent lower than on the training data. This shows the logistic regression model overfits on the training data.
 
-The Multinomial neigh bayes model has accuracy of 91.72%. Japan life and Japan travel have some top common words like Japan, Tokyo etc. The model maynot work well on the common topwords between both subreddit. 
+The Multinomial naive bayes model has accuracy of 91.72%. Japan life and Japan travel have some top common words like Japan, Tokyo etc. The model maynot work well on the common topwords between both subreddit. 
 
 Also to avoid posting under a wrong subreddit and to get customer satisfaction reddit could create a category countries and put the political, life based posting there and use the travel category for travel related subreddit.
 
